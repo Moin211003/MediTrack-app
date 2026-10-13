@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediTrack - Smart Medicine Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-decor"></div>
+  <div class="container">
+    <header class="header">
+      <div class="badge">Health Companion</div>
+      <h1>Medi<span>Track</span></h1>
+      <p>Digital Health & Prescription Reminder Web Application</p>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-title">Total Medicines</span>
+        <span id="total-count" class="stat-value">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Taken Today</span>
+        <span id="taken-count" class="stat-value">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Pending</span>
+        <span id="pending-count" class="stat-value">0</span>
+      </div>
+    </div>
+
+    <section class="card form-card">
+      <h2>+ Add New Prescription</h2>
+      <form id="med-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="med-name">Medicine Name</label>
+            <input type="text" id="med-name" placeholder="e.g. Paracetamol / Vitamin D" required />
+          </div>
+          <div class="form-group">
+            <label for="med-dosage">Dosage</label>
+            <input type="text" id="med-dosage" placeholder="e.g. 500mg (1 tablet)" required />
+          </div>
+          <div class="form-group">
+            <label for="med-time">Scheduled Time</label>
+            <input type="time" id="med-time" required />
+          </div>
+          <div class="form-group">
+            <label for="med-instructions">Instructions</label>
+            <select id="med-instructions">
+              <option value="After Food">After Food</option>
+              <option value="Before Food">Before Food</option>
+              <option value="Empty Stomach">Empty Stomach</option>
+              <option value="Before Bed">Before Bed</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Add Schedule</button>
+      </form>
+    </section>
+
+    <section class="card list-card">
+      <div class="list-header">
+        <h2>Today's Schedule</h2>
+        <button id="clear-all-btn" class="btn-outline">Reset List</button>
+      </div>
+      <div id="med-list" class="med-list">
+        <!-- Medicines will be rendered here dynamically -->
+      </div>
+      <div id="empty-state" class="empty-state">
+        <p>No prescriptions added yet. Stay healthy and on track!</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
